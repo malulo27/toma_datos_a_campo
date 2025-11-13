@@ -1,0 +1,10 @@
+{
+  "name": "toma-datos-a-campo",
+  "version": "1.0.0",
+  "description": "Aplicación web offline-first para registrar datos en campo y sincronizarlos cuando haya conexión.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

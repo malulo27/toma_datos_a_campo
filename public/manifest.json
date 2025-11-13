@@ -1,0 +1,9 @@
+{
+  "name": "Toma de Datos a Campo",
+  "short_name": "Campo",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#1e3a8a",
+  "theme_color": "#2563eb",
+  "icons": []
+}
