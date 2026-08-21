@@ -10,9 +10,11 @@ Disponible en `sds011/leer_sds011.py`.
 
 Lee PM2.5 y PM10 mediante UART-USB, valida las tramas recibidas y guarda los registros en CSV.
 
-### Temtop
+### Temtop PMS 11 (Elitech)
 
-Se incorporará en `temtop/` una vez verificados los parámetros exactos del equipo y del script utilizado previamente, para evitar publicar registros Modbus o conversiones incorrectas.
+Disponible en `temtop/leer_temtop_pms11.py`.
+
+Lee por Modbus RTU sobre RS485 los canales de partículas `0.3um`, `0.5um`, `0.7um`, `1.0um`, `2.5um` y `5.0um`, y guarda los datos en CSV.
 
 ## Instalación básica
 
