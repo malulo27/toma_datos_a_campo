@@ -2,11 +2,11 @@
 setlocal
 
 REM ==============================================
-REM Configuracion - ajustar puertos si es necesario
+REM Configuracion
 REM ==============================================
 set "PUERTO_SDS011=COM3"
-set "PUERTO_TEMTOP=COM5"
-set "INTERVALO=60"
+set "PUERTO_TEMTOP=COM6"
+set "INTERVALO=6"
 
 REM Carpeta donde se encuentra este .bat
 cd /d "%~dp0"
@@ -42,9 +42,13 @@ echo Temtop: %PUERTO_TEMTOP%
 echo Intervalo: %INTERVALO% segundos
 echo.
 
+REM SDS011 mantiene un CSV continuo
 start "SDS011" cmd /k py "sds011\leer_sds011.py" --puerto %PUERTO_SDS011% --archivo "datos\datos_sds011.csv" --intervalo %INTERVALO%
-start "Temtop PMS11" cmd /k py "temtop\leer_temtop_pms11.py" --puerto %PUERTO_TEMTOP% --archivo "datos\lecturas_pms11.csv" --intervalo %INTERVALO%
 
+REM Temtop crea un CSV nuevo en cada ejecucion
+start "Temtop PMS11" cmd /k py "temtop\leer_temtop_pms11.py" --puerto %PUERTO_TEMTOP% --intervalo %INTERVALO% --directorio "datos"
+
+echo.
 echo Se abrieron dos ventanas, una por sensor.
 echo Esta ventana puede cerrarse.
 endlocal
